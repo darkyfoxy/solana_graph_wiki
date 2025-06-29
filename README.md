@@ -17,7 +17,7 @@
 <p align="center">
   <img alt="Status" src="https://img.shields.io/badge/status-early%20alpha-orange" />
   <img alt="Maintained" src="https://img.shields.io/badge/maintained-yes-brightgreen" />
-  <img alt="License" src="https://img.shields.io/github/license/solanagraph/wiki" />
+  <img alt="License" src="https://img.shields.io/github/license/darkyfoxy/solana_graph_wiki" />
 </p>
 
 ---
