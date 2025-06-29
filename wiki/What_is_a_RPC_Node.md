@@ -28,12 +28,12 @@ That’s why we **highly recommend** using a **private or free RPC endpoint** fr
 You can get a free Solana RPC endpoint from these platforms:
 
 
-- <a href="https://helius.dev" target="_blank" >helius.dev</a>
-- <a href="https://quicknode.com" target="_blank" >quicknode.com</a>
-- <a href="https://alchemy.com/" target="_blank" >alchemy.com</a>
-- <a href="https://chainstack.com" target="_blank" >chainstack.com</a>
-- <a href="https://syndica.io/" target="_blank" >syndica.io</a>
-- <a href="https://getblock.io/" target="_blank" >getblock.io</a>
+- [helius.dev](https://helius.dev)
+- [quicknode.com](https://quicknode.com)
+- [alchemy.com](https://alchemy.com/)
+- [chainstack.com](https://chainstack.com)
+- [syndica.io](https://syndica.io/)
+- [getblock.io](https://getblock.io/)
 
 Most of these services allow you to create a **RPC URL** in just a few clicks.
 
