@@ -24,7 +24,7 @@
 
 ## 📘 About This Wiki
 
-This repository contains the Markdown content powering [**wiki.solanagraph.com**](https://wiki.solanagraph.com) — a knowledge base for the **Solana Graph** ecosystem.
+This repository contains the Markdown content powering [**Solana Graph Wiki**](https://wiki.solanagraph.com) — a knowledge base for the **Solana Graph** ecosystem.
 
 [**Solana Graph**](https://solanagraph.com) is a tool for exploring the relationships between accounts, programs, and instructions on the Solana blockchain — presented as a visual, interactive graph.
 
