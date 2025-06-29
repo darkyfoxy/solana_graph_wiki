@@ -14,7 +14,7 @@ This is exactly what Solana Graph does behind the scenes. All requests in Solana
 
 ---
 
-## ⚠️ Please Don’t Use the Default RPC ⚠️ 
+## ⚠️ Don’t Use the Default RPC
 
 Using the **official public Solana RPC** (like `https://api.mainnet-beta.solana.com`) puts **unnecessary load on shared infrastructure**.  
 It may also cause **rate limits** or **incomplete data** due to performance throttling.
@@ -23,7 +23,7 @@ That’s why we **highly recommend** using a **private or free RPC endpoint** fr
 
 ---
 
-## ✅ Recommended Free RPC Providers
+## ✅ Free RPC Providers
 
 You can get a free Solana RPC endpoint from these platforms:
 
