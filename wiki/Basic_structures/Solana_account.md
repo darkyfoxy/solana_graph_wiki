@@ -26,7 +26,7 @@ When developers or smart contracts interact with accounts, they usually see some
 | ------------ | -------------- | --------------------------------------------------------------- |
 | `lamports`   | `u64`          | Number of lamports held by the account                          |
 | `data`       | `Vec<u8>`      | Arbitrary binary data stored in the account                     |
-| `owner`      | `Pubkey`       | Public key of the program that owns this account                |
+| `owner`      | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)       | Public key of the program that owns this account                |
 | `executable` | `bool`         | If `true`, the account contains an executable program           |
 | `rent_epoch` | `u64`          | The next epoch when this account must pay rent                  |
 
@@ -49,10 +49,10 @@ Below is an approximate layout of how an account may be stored inside a file. Th
 | ----------------------------- | -------- | ---------------------------------------------- |
 | `write_version_obsolete`      | `u64`    | Legacy field, no longer actively used          |
 | `data_len`                    | `u64`    | Length of the account's data segment           |
-| `pubkey`                      | `Pubkey` | Public key of the account                      |
+| `pubkey`                      | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) | Public key of the account                      |
 | `lamports`                    | `u64`    | Lamports held in this account                  |
 | `rent_epoch`                  | `u64`    | Next rent epoch                                |
-| `owner`                       | `Pubkey` | Owning program                                 |
+| `owner`                       | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) | Owning program                                 |
 | `executable`                  | `bool`   | If `true`, this is a loaded executable account |
 | `data`                        | `[u8]`   | Binary data payload                            |
 

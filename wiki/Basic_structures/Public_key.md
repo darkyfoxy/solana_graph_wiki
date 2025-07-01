@@ -1,10 +1,10 @@
-# 🔑 Public Key (`Pubkey`)
+# 🔑 Public Key (Pubkey)
 
 In Solana, most things — accounts, programs, authorities — are identified by a **public key**. This is a 32-byte value that uniquely identifies something.
 
 ---
 
-## What is a `Pubkey`
+## What is a Pubkey
 
 Internally, a `Pubkey` is represented as:
 
