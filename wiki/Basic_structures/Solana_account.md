@@ -1,7 +1,5 @@
 # Solana account
 
-# Solana Accounts
-
 In Solana, **accounts** are the fundamental unit of storage. Everything — tokens, smart contracts, metadata, even executable programs — lives in accounts.
 
 ---
