@@ -8,9 +8,9 @@ In Solana, most things — accounts, programs, authorities — are identified by
 
 Internally, a `Pubkey` is represented as:
 
-| Field    | Type         | Description                     |
-|----------|--------------|---------------------------------|
-| `Pubkey` | `[u8; 32]`   | A 32-byte public key identifier |
+| Field | Type | Description |
+|-------|------|-------------|
+| `Pubkey` | `[u8; 32]` | A 32-byte public key identifier |
 
 This is simply an array of 32 bytes.
 

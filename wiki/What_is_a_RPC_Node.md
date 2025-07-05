@@ -16,7 +16,7 @@ This is exactly what Solana Graph does behind the scenes. All requests in Solana
 
 ## ⚠️ Don’t Use the Default RPC
 
-Using the **official public Solana RPC** (like `https://api.mainnet-beta.solana.com`) puts **unnecessary load on shared infrastructure**.  
+Using the **official public Solana RPC** (like `https://api.mainnet-beta.solana.com`) puts **unnecessary load on shared infrastructure**.
 It may also cause **rate limits** or **incomplete data** due to performance throttling.
 
 That’s why we **highly recommend** using a **private or free RPC endpoint** from trusted providers. This improves your experience and keeps the public node healthy. 🙏
@@ -43,8 +43,8 @@ Most of these services allow you to create a **RPC URL** in just a few clicks.
 
 Once you have your RPC URL:
 
-1. Open [**solanagraph.com**](https://solanagraph.com/)  
-2. Paste your custom RPC endpoint into the **RPC URL** field in the top bar  
+1. Open [**solanagraph.com**](https://solanagraph.com/)
+2. Paste your custom RPC endpoint into the **RPC URL** field in the top bar
 3. Click the **"Set RPC URL"** button next to it
 
 That’s it! Solana Graph will now use your node for all requests. 🚀
