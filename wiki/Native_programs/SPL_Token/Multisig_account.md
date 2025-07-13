@@ -9,6 +9,7 @@ It allows a group of public keys to act collectively as an authority for token o
 ## Structure
 
 **Encoding:** `POD`
+
 **Size:** 355 bytes (1 + 1 + 1 + 11×32)
 
 | Name | Type | Description |

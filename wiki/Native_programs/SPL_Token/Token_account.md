@@ -10,6 +10,7 @@ Token Accounts are created for each user (or contract) who wants to hold tokens,
 ## Structure
 
 **Encoding:** `POD`
+
 **Size:** 165 bytes
 
 | Name | Type | Description |
