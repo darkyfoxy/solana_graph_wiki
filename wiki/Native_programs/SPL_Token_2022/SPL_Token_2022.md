@@ -445,6 +445,8 @@ This must be done **before** the mint is initialized and only works if the mint 
 
 ### TransferFeeExtension
 
+See [Transfer Fee Config Extension](https://wiki.solanagraph.com/Native_programs/SPL_Token_2022/extensions/transfer_fee_config.md)
+
 ### ConfidentialTransferExtension
 
 ### DefaultAccountStateExtension
