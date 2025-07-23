@@ -5,33 +5,33 @@ The SPL Token Program is a core component of the Solana ecosystem that implement
 
 ## Instruction list
 
-| ID | Instruction | Inputs | Description |
-| -- | ----------- | ------ | ----------- |
-| 0 | [`InitializeMint`](#initializemint) | `decimals: u8`, `mint_authority:` [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md), `freeze_authority: `[`COption`](https://wiki.solanagraph.com/Basic_structures/COption.md)<[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)> | Creates a new mint with optional freeze authority. |
-| 1 | [`InitializeAccount`](#initializeaccount) | — | Initializes a new token account. |
-| 2 | [`InitializeMultisig`](#initializemultisig) | `m: u8` | Initializes a multisig account with N signers. |
-| 3 | [`Transfer`](#transfer) | `amount: u64` | Transfers tokens from one account to another. |
-| 4 | [`Approve`](#approve) | `amount: u64` | Approves a delegate to transfer tokens. |
-| 5 | [`Revoke`](#revoke) | — | Revokes a delegate’s authority. |
-| 6 | [`SetAuthority`](#setauthority) | `authority_type:` [`AuthorityType`](#authoritytype), `new_authority: ` [`COption`](https://wiki.solanagraph.com/Basic_structures/COption.md)<[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)> | Changes mint or account authority. |
-| 7 | [`MintTo`](#mintto) | `amount: u64` | Mints new tokens to an account. |
-| 8 | [`Burn`](#burn) | `amount: u64` | Burns tokens from an account. |
-| 9 | [`CloseAccount`](#closeaccount) | — | Closes a token account and reclaims SOL. |
-| 10 | [`FreezeAccount`](#freezeaccount) | — | Freezes a token account. |
-| 11 | [`ThawAccount`](#thawaccount) | — | Thaws a frozen account. |
-| 12 | [`TransferChecked`](#transferchecked) | `amount: u64`, `decimals: u8` | Same as `Transfer`, with decimals check. |
-| 13 | [`ApproveChecked`](#approvechecked) | `amount: u64`, `decimals: u8` | Same as `Approve`, with decimals check. |
-| 14 | [`MintToChecked`](#minttochecked) | `amount: u64`, `decimals: u8` | Same as `MintTo`, with decimals check. |
-| 15 | [`BurnChecked`](#burnchecked) | `amount: u64`, `decimals: u8` | Same as `Burn`, with decimals check. |
-| 16 | [`InitializeAccount2`](#initializeaccount2) | `owner:` [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) | Initializes a token account (owner in data). |
-| 17 | [`SyncNative`](#syncnative) | — | Syncs wrapped SOL token account with lamports. |
-| 18 | [`InitializeAccount3`](#initializeaccount3) | `owner:` [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) | Like `InitializeAccount2`, without Rent sysvar. |
-| 19 | [`InitializeMultisig2`](#initializemultisig2) | `m: u8` | Like `InitializeMultisig`, without Rent sysvar. |
-| 20 | [`InitializeMint2`](#initializemint2) | `decimals: u8`, `mint_authority: `[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md), `freeze_authority: ` [`COption`](https://wiki.solanagraph.com/Basic_structures/COption.md)<[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)> | Like `InitializeMint`, without Rent sysvar. |
-| 21 | [`GetAccountDataSize`](#getaccountdatasize) | — | Returns the required size of a token account. |
-| 22 | [`InitializeImmutableOwner`](#initializeimmutableowner) | — | Declares the account’s owner as immutable. |
-| 23 | [`AmountToUiAmount`](#amounttouiamount) | `amount: u64` | Converts raw amount to UI string. |
-| 24 | [`UiAmountToAmount`](#uiamounttoamount) | `ui_amount: &str` | Converts UI string amount to raw amount. |
+| ID | Instruction | Description |
+| -- | ----------- | ----------- |
+| 0 | [`InitializeMint`](#initializemint) | Creates a new mint with optional freeze authority. |
+| 1 | [`InitializeAccount`](#initializeaccount) | Initializes a new token account. |
+| 2 | [`InitializeMultisig`](#initializemultisig) | Initializes a multisig account with N signers. |
+| 3 | [`Transfer`](#transfer) | Transfers tokens from one account to another. |
+| 4 | [`Approve`](#approve) | Approves a delegate to transfer tokens. |
+| 5 | [`Revoke`](#revoke) | Revokes a delegate’s authority. |
+| 6 | [`SetAuthority`](#setauthority) | Changes mint or account authority. |
+| 7 | [`MintTo`](#mintto) | Mints new tokens to an account. |
+| 8 | [`Burn`](#burn) | Burns tokens from an account. |
+| 9 | [`CloseAccount`](#closeaccount) | Closes a token account and reclaims SOL. |
+| 10 | [`FreezeAccount`](#freezeaccount) | Freezes a token account. |
+| 11 | [`ThawAccount`](#thawaccount) | Thaws a frozen account. |
+| 12 | [`TransferChecked`](#transferchecked) | Same as `Transfer`, with decimals check. |
+| 13 | [`ApproveChecked`](#approvechecked) | Same as `Approve`, with decimals check. |
+| 14 | [`MintToChecked`](#minttochecked) | Same as `MintTo`, with decimals check. |
+| 15 | [`BurnChecked`](#burnchecked) | Same as `Burn`, with decimals check. |
+| 16 | [`InitializeAccount2`](#initializeaccount2) | Initializes a token account (owner in data). |
+| 17 | [`SyncNative`](#syncnative) | Syncs wrapped SOL token account with lamports. |
+| 18 | [`InitializeAccount3`](#initializeaccount3) | Like `InitializeAccount2`, without Rent sysvar. |
+| 19 | [`InitializeMultisig2`](#initializemultisig2) | Like `InitializeMultisig`, without Rent sysvar. |
+| 20 | [`InitializeMint2`](#initializemint2) | Like `InitializeMint`, without Rent sysvar. |
+| 21 | [`GetAccountDataSize`](#getaccountdatasize) | Returns the required size of a token account. |
+| 22 | [`InitializeImmutableOwner`](#initializeimmutableowner) | Declares the account’s owner as immutable. |
+| 23 | [`AmountToUiAmount`](#amounttouiamount) | Converts raw amount to UI string. |
+| 24 | [`UiAmountToAmount`](#uiamounttoamount) | Converts UI string amount to raw amount. |
 
 ---
 

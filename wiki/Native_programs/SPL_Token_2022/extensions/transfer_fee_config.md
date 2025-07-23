@@ -30,33 +30,16 @@ The TransferFeeConfig extension enables SPL Token mints to impose transfer fees 
 | `transfer_fee_basis_points` | `u16` | Fee rate in basis points (1 basis point = 0.01%). |
 
 
-## TransferFeeAmount
-
-The TransferFeeAmount structure is an account-level extension in the Token-2022 program used to track withheld fees from token transfers.
-
-When a transfer involving a fee-configured mint occurs, part of the amount may be withheld from the sender and stored locally in the account's withheld_amount field instead of being immediately transferred to the mint.
-
-Applies to: Token accounts only
-
-**Encoding:** `POD`
-
-**Size:** = 18 bytes
-
-| Field | Type | Description |
-| ----- | ---- | ----------- |
-| `withheld_amount` | `u64` | The amount of tokens (in base units) withheld during transfers. |
-
-
 ## Instructions
 
-| ID | Instruction | Inputs | Description |
-| -- | ----------- | ------ | ----------- |
-| 0 | `InitializeTransferFeeConfig` | `transfer_fee_config_authority: Option<`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`>`, `withdraw_withheld_authority: Option<`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`>`, `transfer_fee_basis_points: u16`, `maximum_fee: u64` | Initializes the transfer fee extension on a new mint. Must be called before `InitializeMint`. |
-| 1 | `TransferCheckedWithFee` | `amount: u64`, `decimals: u8`, `fee: u64` | Transfers tokens and validates the provided fee. Works even if the mint has no fee configured. |
-| 2 | `WithdrawWithheldTokensFromMint` | — | Withdraws all withheld fees from the mint to a destination account. Requires `withdraw_withheld_authority`. |
-| 3 | `WithdrawWithheldTokensFromAccounts` | `num_token_accounts: u8` | Withdraws withheld fees from multiple token accounts. |
-| 4 | `HarvestWithheldTokensToMint` | — | Permissionless: collects withheld tokens from token accounts into the mint. |
-| 5 | `SetTransferFee` | `transfer_fee_basis_points: u16`, `maximum_fee: u64` | Updates transfer fee settings. Must be signed by fee authority. |
+| ID | Instruction | Description |
+| -- | ----------- | ----------- |
+| 0 | `InitializeTransferFeeConfig` | Initializes the transfer fee extension on a new mint. Must be called before `InitializeMint`. |
+| 1 | `TransferCheckedWithFee` | Transfers tokens and validates the provided fee. Works even if the mint has no fee configured. |
+| 2 | `WithdrawWithheldTokensFromMint` | Withdraws all withheld fees from the mint to a destination account. Requires `withdraw_withheld_authority`. |
+| 3 | `WithdrawWithheldTokensFromAccounts` | Withdraws withheld fees from multiple token accounts. |
+| 4 | `HarvestWithheldTokensToMint` | Permissionless: collects withheld tokens from token accounts into the mint. |
+| 5 | `SetTransferFee` | Updates transfer fee settings. Must be signed by fee authority. |
 
 
 
