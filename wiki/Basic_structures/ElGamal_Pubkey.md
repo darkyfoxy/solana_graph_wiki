@@ -4,9 +4,9 @@
 
 Internally, it is represented as a fixed-size byte array and typically displayed or serialized in Base58 format, making it human-readable and compact.
 
-## What is a Pubkey
+## What is a ElGamalPubkey
 
-Internally, a `Pubkey` is represented as:
+Internally, a `ElGamalPubkey` is represented as:
 
 | Field | Type | Description |
 |-------|------|-------------|

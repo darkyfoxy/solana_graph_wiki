@@ -104,7 +104,7 @@ This account requires M out of N signatures to authorize operations.
 | ---- | ---- |
 | `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
 | `multisig_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signer_pubkeys` | `&[&`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `signer_pubkeys` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
 | `m` | `u8` |
 
 ### Transfer
@@ -119,7 +119,7 @@ It supports both single-signer and multisig authorities.
 | `source_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
 | `destination_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
 | `authority_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signer_pubkeys` | `&[&`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `signer_pubkeys` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
 | `amount` | `u64`
 
 ### Approve
@@ -133,7 +133,7 @@ The `Approve` instruction allows a delegate to transfer up to a specified amount
 | `source_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
 | `delegate_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
 | `owner_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signer_pubkeys` | `&[&`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `signer_pubkeys` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
 | `amount` | `u64` |
 ### Revoke
 
@@ -145,7 +145,7 @@ The `Revoke` instruction removes a previously approved delegate from a token acc
 | `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
 | `source_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
 | `owner_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signer_pubkeys` | `&[&`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `signer_pubkeys` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
 
 
 ### SetAuthority
@@ -161,7 +161,7 @@ It can update the mint authority, freeze authority, account owner, or close auth
 | `new_authority_pubkey`| `Option<`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`>` |
 | `authority_type` | [`AuthorityType`](#authoritytype) |
 | `owner_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signer_pubkeys` | `&[&`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `signer_pubkeys` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
 
 
 ### MintTo
@@ -176,7 +176,7 @@ This instruction increases the total supply of the token.
 | `mint_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
 | `account_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
 | `owner_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signer_pubkeys` | `&[&`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `signer_pubkeys` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
 | `amount` | `u64`
 
 ### Burn
@@ -190,7 +190,7 @@ The `Burn` instruction removes tokens from a token account, reducing the total s
 | `account_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
 | `mint_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
 | `authority_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signer_pubkeys` | `&[&`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `signer_pubkeys` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
 | `amount` | `u64` |
 
 
@@ -205,7 +205,7 @@ The `CloseAccount` instruction transfers all remaining SOL from a token account 
 | `account_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
 | `destination_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
 | `owner_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signer_pubkeys` | `&[&`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `signer_pubkeys` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
 
 
 ### FreezeAccount
@@ -220,7 +220,7 @@ Requires the mint's freeze authority.
 | `account_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
 | `mint_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
 | `owner_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signer_pubkeys` | `&[&`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `signer_pubkeys` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
 
 
 ### ThawAccount
@@ -235,7 +235,7 @@ Requires the mint’s freeze authority.
 | `account_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
 | `mint_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
 | `owner_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signer_pubkeys` | `&[&`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `signer_pubkeys` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
 
 
 ### TransferChecked
@@ -251,7 +251,7 @@ This is useful when validating transfers in offline signing or hardware wallets.
 | `mint_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
 | `destination_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
 | `authority_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signer_pubkeys` | `&[&`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `signer_pubkeys` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
 | `amount` | `u64` |
 | `decimals` | `u8` |
 
@@ -268,7 +268,7 @@ The `ApproveChecked` instruction approves a delegate to transfer up to a specifi
 | `mint_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
 | `delegate_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
 | `owner_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signer_pubkeys` | `&[&`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `signer_pubkeys` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
 | `amount` | `u64` |
 | `decimals` | `u8` |
 
@@ -284,7 +284,7 @@ The `MintToChecked` instruction mints new tokens to an account, **validating the
 | `mint_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
 | `account_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
 | `owner_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signer_pubkeys` | `&[&`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `signer_pubkeys` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
 | `amount` | `u64` |
 | `decimals` | `u8` |
 
@@ -300,7 +300,7 @@ The `BurnChecked` instruction removes tokens from a token account,
 | `account_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
 | `mint_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
 | `authority_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signer_pubkeys` | `&[&`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `signer_pubkeys` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
 | `amount` | `u64` |
 | `decimals` | `u8` |
 
@@ -360,7 +360,7 @@ to authorize instructions where the multisig account is used.
 | ---- | ---- |
 | `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
 | `multisig_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signer_pubkeys` | `&[&`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `signer_pubkeys` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
 | `m` | `u8` |
 
 
@@ -426,7 +426,7 @@ The result is returned using Solana’s return data mechanism.
 | ---- | ---- |
 | `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
 | `mint_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `ui_amount` | `&str` |
+| `ui_amount` | `str` |
 
 
 ### InitializeMintCloseAuthority
@@ -467,8 +467,8 @@ This is useful when enabling optional features after account creation.
 | `account_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
 | `payer` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
 | `owner_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signer_pubkeys` | `&[&`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
-| `extension_types` | `&[ExtensionType]` |
+| `signer_pubkeys` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `extension_types` | `[ExtensionType]` |
 
 ### MemoTransferExtension
 
@@ -534,7 +534,7 @@ The `WithdrawExcessLamports` instruction is used to **recover SOL** that was acc
 | `source_account` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
 | `destination_account` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
 | `authority` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signers` | `&[&`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `signers` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
 
 ### MetadataPointerExtension
 
