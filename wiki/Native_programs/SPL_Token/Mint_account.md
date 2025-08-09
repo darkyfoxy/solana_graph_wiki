@@ -16,10 +16,10 @@ Here is the layout of a Mint account as defined in the SPL Token Program:
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| `mint_authority` | [`COption`](https://wiki.solanagraph.com/Basic_structures/COption.md)<[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)> | Who can mint new tokens. If `None`, the token supply is fixed. |
+| `mint_authority` | `COption<Pubkey>` | Who can mint new tokens. If `None`, the token supply is fixed. |
 | `supply` | `u64` | Total number of tokens minted (in base units). |
 | `decimals` | `u8` | Number of decimal places (e.g. `6` means 1 token = `1_000_000` base units). |
 | `is_initialized` | `bool` | Indicates if this mint account has been initialized properly. |
-| `freeze_authority` | [`COption`](https://wiki.solanagraph.com/Basic_structures/COption.md)<[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)> | Optional authority that can freeze token accounts (typically for compliance or control). |
+| `freeze_authority` | `COption<Pubkey>` | Optional authority that can freeze token accounts (typically for compliance or control). |
 
 

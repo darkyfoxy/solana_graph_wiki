@@ -7,51 +7,51 @@ The **Token-2022 Program** is an extended version of the [SPL Token Program](htt
 
 | ID | Instruction | Description |
 | -- | ----------- | ----------- |
-| 0 | [`InitializeMint`](#initializemint) | Creates a new mint with optional freeze authority. |
-| 1 | [`InitializeAccount`](#initializeaccount) | Initializes a new token account. |
-| 2 | [`InitializeMultisig`](#initializemultisig) | Initializes a multisig account with N signers. |
-| 3 | [`Transfer`](#transfer) | Transfers tokens from one account to another. NOTE This instruction is deprecated in favor of `TransferChecked` or `TransferCheckedWithFee` |
-| 4 | [`Approve`](#approve) | Approves a delegate to transfer tokens. |
-| 5 | [`Revoke`](#revoke) | Revokes a delegate’s authority. |
-| 6 | [`SetAuthority`](#setauthority) | Changes mint or account authority. |
-| 7 | [`MintTo`](#mintto) | Mints new tokens to an account. |
-| 8 | [`Burn`](#burn) | Burns tokens from an account. |
-| 9 | [`CloseAccount`](#closeaccount) | Closes a token account and reclaims SOL. |
-| 10 | [`FreezeAccount`](#freezeaccount) | Freezes a token account. |
-| 11 | [`ThawAccount`](#thawaccount) | Thaws a frozen account. |
-| 12 | [`TransferChecked`](#transferchecked) | Same as `Transfer`, with decimals check. |
-| 13 | [`ApproveChecked`](#approvechecked) | Same as `Approve`, with decimals check. |
-| 14 | [`MintToChecked`](#minttochecked) | Same as `MintTo`, with decimals check. |
-| 15 | [`BurnChecked`](#burnchecked) | Same as `Burn`, with decimals check. |
-| 16 | [`InitializeAccount2`](#initializeaccount2) | Initializes a token account (owner in data). |
-| 17 | [`SyncNative`](#syncnative) | Syncs wrapped SOL token account with lamports. |
-| 18 | [`InitializeAccount3`](#initializeaccount3) | Like `InitializeAccount2`, without Rent sysvar. |
-| 19 | [`InitializeMultisig2`](#initializemultisig2) | Like `InitializeMultisig`, without Rent sysvar. |
-| 20 | [`InitializeMint2`](#initializemint2) | Like `InitializeMint`, without Rent sysvar. |
-| 21 | [`GetAccountDataSize`](#getaccountdatasize) | Returns the required size of a token account. |
-| 22 | [`InitializeImmutableOwner`](#initializeimmutableowner) | Declares the account’s owner as immutable. |
-| 23 | [`AmountToUiAmount`](#amounttouiamount) | Converts raw amount to UI string. |
-| 24 | [`UiAmountToAmount`](#uiamounttoamount) | Converts UI string amount to raw amount. |
-| 25 | [`InitializeMintCloseAuthority`](#) | Set close authority for a mint. |
-| 26 | [`TransferFeeExtension`](#) | Entry point for Transfer Fee extension. |
-| 27 | [`ConfidentialTransferExtension`](#) | Entry point for Confidential Transfer extension. |
-| 28 | [`DefaultAccountStateExtension`](#) | Entry point for Default Account State extension. |
-| 29 | [`Reallocate`](#) | Reallocate account for additional extensions. |
-| 30 | [`MemoTransferExtension`](#) | Entry point for Memo Transfer extension. |
-| 31 | [`CreateNativeMint`](#) | Create the wrapped SOL native mint. |
-| 32 | [`InitializeNonTransferableMint`](#) | Make mint non-transferable. |
-| 33 | [`InterestBearingMintExtension`](#) | Entry point for interest-bearing mint extension. |
-| 34 | [`CpiGuardExtension`](#) | Entry point for CPI guard extension. |
-| 35 | [`InitializePermanentDelegate`](#initializepermanentdelegate) | Set permanent delegate for a mint. |
-| 36 | [`TransferHookExtension`](#) | Entry point for transfer hook extension. |
-| 37 | [`ConfidentialTransferFeeExtension`](#) | Entry point for confidential fee extension. |
-| 38 | [`WithdrawExcessLamports`](#) | Rescue SOL from token-owned account. |
-| 39 | [`MetadataPointerExtension`](#) | Entry point for metadata pointer extension. |
-| 40 | [`GroupPointerExtension`](#) | Entry point for group pointer extension. |
-| 41 | [`GroupMemberPointerExtension`](#) | Entry point for group member pointer extension. |
-| 42 | [`ConfidentialMintBurnExtension`](#) | Entry point for confidential mint/burn extension. |
-| 43 | [`ScaledUiAmountExtension`](#) | Entry point for scaled UI amount extension. |
-| 44 | [`PausableExtension`](#) | Entry point for pausable token extension. |
+| 0 | `InitializeMint` | Creates a new mint with optional freeze authority. |
+| 1 | `InitializeAccount` | Initializes a new token account. |
+| 2 | `InitializeMultisig` | Initializes a multisig account with N signers. |
+| 3 | `Transfer` | Transfers tokens from one account to another. NOTE This instruction is deprecated in favor of `TransferChecked` or `TransferCheckedWithFee` |
+| 4 | `Approve` | Approves a delegate to transfer tokens. |
+| 5 | `Revoke` | Revokes a delegate’s authority. |
+| 6 | `SetAuthority` | Changes mint or account authority. |
+| 7 | `MintTo` | Mints new tokens to an account. |
+| 8 | `Burn` | Burns tokens from an account. |
+| 9 | `CloseAccount` | Closes a token account and reclaims SOL. |
+| 10 | `FreezeAccount` | Freezes a token account. |
+| 11 | `ThawAccount` | Thaws a frozen account. |
+| 12 | `TransferChecked` | Same as `Transfer`, with decimals check. |
+| 13 | `ApproveChecked` | Same as `Approve`, with decimals check. |
+| 14 | `MintToChecked` | Same as `MintTo`, with decimals check. |
+| 15 | `BurnChecked` | Same as `Burn`, with decimals check. |
+| 16 | `InitializeAccount2` | Initializes a token account (owner in data). |
+| 17 | `SyncNative` | Syncs wrapped SOL token account with lamports. |
+| 18 | `InitializeAccount3` | Like `InitializeAccount2`, without Rent sysvar. |
+| 19 | `InitializeMultisig2` | Like `InitializeMultisig`, without Rent sysvar. |
+| 20 | `InitializeMint2` | Like `InitializeMint`, without Rent sysvar. |
+| 21 | `GetAccountDataSize` | Returns the required size of a token account. |
+| 22 | `InitializeImmutableOwner` | Declares the account’s owner as immutable. |
+| 23 | `AmountToUiAmount` | Converts raw amount to UI string. |
+| 24 | `UiAmountToAmount` | Converts UI string amount to raw amount. |
+| 25 | `InitializeMintCloseAuthority` | Set close authority for a mint. |
+| 26 | `TransferFeeExtension` | Entry point for Transfer Fee extension. |
+| 27 | `ConfidentialTransferExtension` | Entry point for Confidential Transfer extension. |
+| 28 | `DefaultAccountStateExtension` | Entry point for Default Account State extension. |
+| 29 | `Reallocate` | Reallocate account for additional extensions. |
+| 30 | `MemoTransferExtension` | Entry point for Memo Transfer extension. |
+| 31 | `CreateNativeMint` | Create the wrapped SOL native mint. |
+| 32 | `InitializeNonTransferableMint` | Make mint non-transferable. |
+| 33 | `InterestBearingMintExtension` | Entry point for interest-bearing mint extension. |
+| 34 | `CpiGuardExtension` | Entry point for CPI guard extension. |
+| 35 | `InitializePermanentDelegate` | Set permanent delegate for a mint. |
+| 36 | `TransferHookExtension` | Entry point for transfer hook extension. |
+| 37 | `ConfidentialTransferFeeExtension` | Entry point for confidential fee extension. |
+| 38 | `WithdrawExcessLamports` | Rescue SOL from token-owned account. |
+| 39 | `MetadataPointerExtension` | Entry point for metadata pointer extension. |
+| 40 | `GroupPointerExtension` | Entry point for group pointer extension. |
+| 41 | `GroupMemberPointerExtension` | Entry point for group member pointer extension. |
+| 42 | `ConfidentialMintBurnExtension` | Entry point for confidential mint/burn extension. |
+| 43 | `ScaledUiAmountExtension` | Entry point for scaled UI amount extension. |
+| 44 | `PausableExtension` | Entry point for pausable token extension. |
 
 ### AuthorityType
 
@@ -74,10 +74,10 @@ The `InitializeMint` instruction is used to **create a new token mint** with a s
 **Parameters:**
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `mint_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `mint_authority_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `freeze_authority_pubkey` | `Option<`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`>` |
+| `token_program_id` | `Pubkey` |
+| `mint_pubkey` | `Pubkey` |
+| `mint_authority_pubkey` | `Pubkey` |
+| `freeze_authority_pubkey` | `Option<Pubkey>`|
 | `decimals` | `u8` |
 
 ### InitializeAccount
@@ -88,10 +88,10 @@ This is one of the most common instructions in the SPL Token program and must be
 **Parameters:**
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `account_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `mint_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `owner_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
+| `token_program_id` | `Pubkey` |
+| `account_pubkey` | `Pubkey` |
+| `mint_pubkey` | `Pubkey` |
+| `owner_pubkey` | `Pubkey` |
 
 
 ### InitializeMultisig
@@ -102,9 +102,9 @@ This account requires M out of N signatures to authorize operations.
 **Parameters:**
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `multisig_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signer_pubkeys` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `token_program_id` | `Pubkey` |
+| `multisig_pubkey` | `Pubkey` |
+| `signer_pubkeys` | `[Pubkey]` |
 | `m` | `u8` |
 
 ### Transfer
@@ -115,11 +115,11 @@ It supports both single-signer and multisig authorities.
 **Parameters:**
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `source_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `destination_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `authority_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signer_pubkeys` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `token_program_id` | `Pubkey` |
+| `source_pubkey` | `Pubkey` |
+| `destination_pubkey` | `Pubkey` |
+| `authority_pubkey` | `Pubkey` |
+| `signer_pubkeys` | `[Pubkey]` |
 | `amount` | `u64`
 
 ### Approve
@@ -129,11 +129,11 @@ The `Approve` instruction allows a delegate to transfer up to a specified amount
 **Parameters:**
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `source_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `delegate_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `owner_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signer_pubkeys` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `token_program_id` | `Pubkey` |
+| `source_pubkey` | `Pubkey` |
+| `delegate_pubkey` | `Pubkey` |
+| `owner_pubkey` | `Pubkey` |
+| `signer_pubkeys` | `[Pubkey]` |
 | `amount` | `u64` |
 ### Revoke
 
@@ -142,10 +142,10 @@ The `Revoke` instruction removes a previously approved delegate from a token acc
 **Parameters:**
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `source_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `owner_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signer_pubkeys` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `token_program_id` | `Pubkey` |
+| `source_pubkey` | `Pubkey` |
+| `owner_pubkey` | `Pubkey` |
+| `signer_pubkeys` | `[Pubkey]` |
 
 
 ### SetAuthority
@@ -156,12 +156,12 @@ It can update the mint authority, freeze authority, account owner, or close auth
 **Parameters:**
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `owned_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `new_authority_pubkey`| `Option<`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`>` |
-| `authority_type` | [`AuthorityType`](#authoritytype) |
-| `owner_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signer_pubkeys` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `token_program_id` | `Pubkey` |
+| `owned_pubkey` | `Pubkey` |
+| `new_authority_pubkey`| `Option<Pubkey>`|
+| `authority_type` | `AuthorityType` |
+| `owner_pubkey` | `Pubkey` |
+| `signer_pubkeys` | `[Pubkey]` |
 
 
 ### MintTo
@@ -172,11 +172,11 @@ This instruction increases the total supply of the token.
 **Parameters:**
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `mint_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `account_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `owner_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signer_pubkeys` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `token_program_id` | `Pubkey` |
+| `mint_pubkey` | `Pubkey` |
+| `account_pubkey` | `Pubkey` |
+| `owner_pubkey` | `Pubkey` |
+| `signer_pubkeys` | `[Pubkey]` |
 | `amount` | `u64`
 
 ### Burn
@@ -186,11 +186,11 @@ The `Burn` instruction removes tokens from a token account, reducing the total s
 **Parameters:**
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `account_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `mint_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `authority_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signer_pubkeys` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `token_program_id` | `Pubkey` |
+| `account_pubkey` | `Pubkey` |
+| `mint_pubkey` | `Pubkey` |
+| `authority_pubkey` | `Pubkey` |
+| `signer_pubkeys` | `[Pubkey]` |
 | `amount` | `u64` |
 
 
@@ -201,11 +201,11 @@ The `CloseAccount` instruction transfers all remaining SOL from a token account 
 **Parameters:**
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `account_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `destination_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `owner_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signer_pubkeys` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `token_program_id` | `Pubkey` |
+| `account_pubkey` | `Pubkey` |
+| `destination_pubkey` | `Pubkey` |
+| `owner_pubkey` | `Pubkey` |
+| `signer_pubkeys` | `[Pubkey]` |
 
 
 ### FreezeAccount
@@ -216,11 +216,11 @@ Requires the mint's freeze authority.
 **Parameters:**
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `account_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `mint_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `owner_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signer_pubkeys` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `token_program_id` | `Pubkey` |
+| `account_pubkey` | `Pubkey` |
+| `mint_pubkey` | `Pubkey` |
+| `owner_pubkey` | `Pubkey` |
+| `signer_pubkeys` | `[Pubkey]` |
 
 
 ### ThawAccount
@@ -231,11 +231,11 @@ Requires the mint’s freeze authority.
 **Parameters:**
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `account_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `mint_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `owner_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signer_pubkeys` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `token_program_id` | `Pubkey` |
+| `account_pubkey` | `Pubkey` |
+| `mint_pubkey` | `Pubkey` |
+| `owner_pubkey` | `Pubkey` |
+| `signer_pubkeys` | `[Pubkey]` |
 
 
 ### TransferChecked
@@ -246,12 +246,12 @@ This is useful when validating transfers in offline signing or hardware wallets.
 **Parameters:**
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `source_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `mint_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `destination_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `authority_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signer_pubkeys` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `token_program_id` | `Pubkey` |
+| `source_pubkey` | `Pubkey` |
+| `mint_pubkey` | `Pubkey` |
+| `destination_pubkey` | `Pubkey` |
+| `authority_pubkey` | `Pubkey` |
+| `signer_pubkeys` | `[Pubkey]` |
 | `amount` | `u64` |
 | `decimals` | `u8` |
 
@@ -263,12 +263,12 @@ The `ApproveChecked` instruction approves a delegate to transfer up to a specifi
 **Parameters:**
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `source_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `mint_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `delegate_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `owner_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signer_pubkeys` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `token_program_id` | `Pubkey` |
+| `source_pubkey` | `Pubkey` |
+| `mint_pubkey` | `Pubkey` |
+| `delegate_pubkey` | `Pubkey` |
+| `owner_pubkey` | `Pubkey` |
+| `signer_pubkeys` | `[Pubkey]` |
 | `amount` | `u64` |
 | `decimals` | `u8` |
 
@@ -280,11 +280,11 @@ The `MintToChecked` instruction mints new tokens to an account, **validating the
 **Parameters:**
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `mint_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `account_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `owner_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signer_pubkeys` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `token_program_id` | `Pubkey` |
+| `mint_pubkey` | `Pubkey` |
+| `account_pubkey` | `Pubkey` |
+| `owner_pubkey` | `Pubkey` |
+| `signer_pubkeys` | `[Pubkey]` |
 | `amount` | `u64` |
 | `decimals` | `u8` |
 
@@ -296,11 +296,11 @@ The `BurnChecked` instruction removes tokens from a token account,
 **Parameters:**
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `account_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `mint_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `authority_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signer_pubkeys` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `token_program_id` | `Pubkey` |
+| `account_pubkey` | `Pubkey` |
+| `mint_pubkey` | `Pubkey` |
+| `authority_pubkey` | `Pubkey` |
+| `signer_pubkeys` | `[Pubkey]` |
 | `amount` | `u64` |
 | `decimals` | `u8` |
 
@@ -314,10 +314,10 @@ Useful for CPI (Cross Program Invocation) scenarios.
 **Parameters:**
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `account_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `mint_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `owner_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
+| `token_program_id` | `Pubkey` |
+| `account_pubkey` | `Pubkey` |
+| `mint_pubkey` | `Pubkey` |
+| `owner_pubkey` | `Pubkey` |
 
 
 ### SyncNative
@@ -330,8 +330,8 @@ This is useful when native SOL is transferred directly to the token account usin
 **Parameters:**
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `account_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
+| `token_program_id` | `Pubkey` |
+| `account_pubkey` | `Pubkey` |
 
 
 ### InitializeAccount3
@@ -343,10 +343,10 @@ Useful for programs that know rent-exemption will already be handled externally.
 **Parameters:**
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `account_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `mint_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `owner_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
+| `token_program_id` | `Pubkey` |
+| `account_pubkey` | `Pubkey` |
+| `mint_pubkey` | `Pubkey` |
+| `owner_pubkey` | `Pubkey` |
 
 
 ### InitializeMultisig2
@@ -358,9 +358,9 @@ to authorize instructions where the multisig account is used.
 **Parameters:**
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `multisig_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signer_pubkeys` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `token_program_id` | `Pubkey` |
+| `multisig_pubkey` | `Pubkey` |
+| `signer_pubkeys` | `[Pubkey]` |
 | `m` | `u8` |
 
 
@@ -372,10 +372,10 @@ Used when the account is already rent-exempt.
 **Parameters:**
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `mint_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `mint_authority_pubkey`| [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `freeze_authority_pubkey` | `Option<`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`>` |
+| `token_program_id` | `Pubkey` |
+| `mint_pubkey` | `Pubkey` |
+| `mint_authority_pubkey`| `Pubkey` |
+| `freeze_authority_pubkey` | `Option<Pubkey>`|
 | `decimals` | `u8` |
 
 
@@ -386,8 +386,8 @@ The `GetAccountDataSize` instruction calculates the required size for a token ac
 **Parameters:**
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `mint_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
+| `token_program_id` | `Pubkey` |
+| `mint_pubkey` | `Pubkey` |
 
 ### InitializeImmutableOwner
 
@@ -398,8 +398,8 @@ This must be called **before** `InitializeAccount`, and is mainly used for compa
 **Parameters:**
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `account_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
+| `token_program_id` | `Pubkey` |
+| `account_pubkey` | `Pubkey` |
 
 
 ### AmountToUiAmount
@@ -410,8 +410,8 @@ The result is returned using Solana’s return data mechanism.
 **Parameters:**
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `mint_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
+| `token_program_id` | `Pubkey` |
+| `mint_pubkey` | `Pubkey` |
 | `amount` | `u64` |
 
 
@@ -424,8 +424,8 @@ The result is returned using Solana’s return data mechanism.
 **Parameters:**
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `mint_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
+| `token_program_id` | `Pubkey` |
+| `mint_pubkey` | `Pubkey` |
 | `ui_amount` | `str` |
 
 
@@ -463,11 +463,11 @@ This is useful when enabling optional features after account creation.
 
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `account_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `payer` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `owner_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signer_pubkeys` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `token_program_id` | `Pubkey` |
+| `account_pubkey` | `Pubkey` |
+| `payer` | `Pubkey` |
+| `owner_pubkey` | `Pubkey` |
+| `signer_pubkeys` | `[Pubkey]` |
 | `extension_types` | `[ExtensionType]` |
 
 ### MemoTransferExtension
@@ -482,8 +482,8 @@ This instruction is permissionless and only needs to be invoked once on-chain af
 
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `payer` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
+| `token_program_id` | `Pubkey` |
+| `payer` | `Pubkey` |
 
 
 ### InitializeNonTransferableMint
@@ -496,8 +496,8 @@ Once initialized, **tokens minted from this mint cannot be transferred** between
 
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `mint_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
+| `token_program_id` | `Pubkey` |
+| `mint_pubkey` | `Pubkey` |
 
 ### InterestBearingMintExtension
 
@@ -513,9 +513,9 @@ This delegate will have ongoing authority to perform actions like `Transfer` or 
 
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `mint_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `delegate` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
+| `token_program_id` | `Pubkey` |
+| `mint_pubkey` | `Pubkey` |
+| `delegate` | `Pubkey` |
 
 
 ### TransferHookExtension
@@ -530,11 +530,11 @@ The `WithdrawExcessLamports` instruction is used to **recover SOL** that was acc
 
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `source_account` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `destination_account` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `authority` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signers` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `token_program_id` | `Pubkey` |
+| `source_account` | `Pubkey` |
+| `destination_account` | `Pubkey` |
+| `authority` | `Pubkey` |
+| `signers` | `[Pubkey]` |
 
 ### MetadataPointerExtension
 

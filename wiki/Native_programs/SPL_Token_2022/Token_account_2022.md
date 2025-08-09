@@ -14,15 +14,15 @@ Each account is linked to a particular Mint, and an owner who controls it.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| `mint` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) | The SPL Token mint this account is associated with. |
-| `owner` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) | The account's owner (who controls its tokens). |
+| `mint` | `Pubkey` | The SPL Token mint this account is associated with. |
+| `owner` | `Pubkey` | The account's owner (who controls its tokens). |
 | `amount` | `u64` | Token balance in base units. |
-| `delegate` | [`COption`](https://wiki.solanagraph.com/Basic_structures/COption.md)<[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)> | Optional delegate allowed to transfer tokens on behalf of the owner. |
-| `state` | [`AccountState`](#accountstate) | The status of the token account (e.g., active or frozen). |
-| `is_native` | [`COption`](https://wiki.solanagraph.com/Basic_structures/COption.md)<`u64`> | Present if this account wraps native SOL. Holds rent-exempt reserve value. |
+| `delegate` | `COption<Pubkey>` | Optional delegate allowed to transfer tokens on behalf of the owner. |
+| `state` | `AccountState` | The status of the token account (e.g., active or frozen). |
+| `is_native` | `COption`<`u64`> | Present if this account wraps native SOL. Holds rent-exempt reserve value. |
 | `delegated_amount` | `u64` | The amount the delegate is allowed to transfer. |
-| `close_authority` | [`COption`](https://wiki.solanagraph.com/Basic_structures/COption.md)<[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)> | Optional authority allowed to close the account and withdraw rent. |
-| `account_type` | [`AccountType`](#accounttype) | Stored at byte offset `165`. Distinguishes between Mint and Token accounts. |
+| `close_authority` | `COption<Pubkey>` | Optional authority allowed to close the account and withdraw rent. |
+| `account_type` | `AccountType` | Stored at byte offset `165`. Distinguishes between Mint and Token accounts. |
 | `extensions` | TLV entries | Optional extensions activated for this account. |
 
 

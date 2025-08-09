@@ -12,4 +12,4 @@ This extension must be initialized before it can be used. If close_authority is 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| `close_authority` | [`NonZeroPubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) | The optional authority allowed to close the mint. |
+| `close_authority` | `NonZeroPubkey` | The optional authority allowed to close the mint. |

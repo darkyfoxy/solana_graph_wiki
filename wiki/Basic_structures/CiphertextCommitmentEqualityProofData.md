@@ -10,17 +10,17 @@ The `CiphertextCommitmentEqualityProofData` structure provides both the cryptogr
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| `context` | [`CiphertextCommitmentEqualityProofContext`](#proof-context) | Includes all the cryptographic inputs (ciphertext, commitment, pubkey). |
-| `proof` | [`CiphertextCommitmentEqualityProof`](#the-proof) | The zero-knowledge proof that both represent the same value. |
+| `context` | `CiphertextCommitmentEqualityProofContext` | Includes all the cryptographic inputs (ciphertext, commitment, pubkey). |
+| `proof` | `CiphertextCommitmentEqualityProof` | The zero-knowledge proof that both represent the same value. |
 
 
 ## CiphertextCommitmentEqualityProofContext
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| `pubkey` | [`ElGamalPubkey`](https://wiki.solanagraph.com/Basic_structures/ElGamal_Pubkey.md) | The ElGamal public key used to encrypt the value. |
-| `ciphertext` | [`ElGamalCiphertext`](https://wiki.solanagraph.com/Basic_structures/ElGamal_Ciphertext.md) | The ElGamal-encrypted value. |
-| `commitment` | [`PedersenCommitment`](https://wiki.solanagraph.com/Basic_structures/PedersenCommitment.md) | A Pedersen commitment to the same value. |
+| `pubkey` | `ElGamalPubkey` | The ElGamal public key used to encrypt the value. |
+| `ciphertext` | `ElGamalCiphertext` | The ElGamal-encrypted value. |
+| `commitment` | `PedersenCommitment` | A Pedersen commitment to the same value. |
 
 
 ## CiphertextCommitmentEqualityProof

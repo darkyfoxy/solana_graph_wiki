@@ -16,13 +16,13 @@ This is the structure of a Mint Account in the Token-2022 program. It consists o
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| `mint_authority` | [`COption`](https://wiki.solanagraph.com/Basic_structures/COption.md)<[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)> | Who can mint new tokens. If `None`, the token supply is fixed. |
+| `mint_authority` | `COption<Pubkey> `| Who can mint new tokens. If `None`, the token supply is fixed. |
 | `supply` | `u64` | Total number of tokens minted (in base units). |
 | `decimals` | `u8` | Number of decimal places (e.g. `6` means 1 token = 1,000,000 base units). |
 | `is_initialized` | `bool` | Indicates if this mint account has been initialized properly. |
-| `freeze_authority` | [`COption`](https://wiki.solanagraph.com/Basic_structures/COption.md)<[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)> | Optional authority that can freeze token accounts (typically for compliance or control). |
+| `freeze_authority` | `COption<Pubkey> `| Optional authority that can freeze token accounts (typically for compliance or control). |
 | `padding` | `[u8; 83]` | Reserved padding bytes to ensure the account is 165 bytes — aligning `AccountType` offset across types. |
-| `account_type` | [`AccountType`](#accounttype) | Enum that defines whether this account is a `Mint`, `TokenAccount`, or `Uninitialized`. |
+| `account_type` | `AccountType` | Enum that defines whether this account is a `Mint`, `TokenAccount`, or `Uninitialized`. |
 | `extensions` | TLV entries | Optional data entries representing enabled extensions for this account. |
 
 

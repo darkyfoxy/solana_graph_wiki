@@ -12,9 +12,9 @@ This structure is stored as part of the mint’s extensions and is required to e
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| `authority` | [`NonZeroPubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) | Optional authority allowed to configure the mint and approve accounts. Must not be a multisig. |
+| `authority` | `NonZeroPubkey` | Optional authority allowed to configure the mint and approve accounts. Must not be a multisig. |
 | `auto_approve_new_accounts` | `bool` | If `true`, no approval is required and new accounts may be used immediately. If `false`, the authority must approve newly configured accounts. |
-| `auditor_elgamal_pubkey` | [`NonZeroElGamalPubkey`](https://wiki.solanagraph.com/Basic_structures/ElGamal_Pubkey.md) | Optional ElGamal public key for an auditor that can decrypt transfer amounts. |
+| `auditor_elgamal_pubkey` | `NonZeroElGamalPubkey` | Optional ElGamal public key for an auditor that can decrypt transfer amounts. |
 
 ## Instructions
 
@@ -45,11 +45,11 @@ The `InitializeMint` instruction sets up confidential transfer capabilities for 
 
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `mint` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `authority` | `Option<`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`>` |
+| `token_program_id` | `Pubkey` |
+| `mint` | `Pubkey` |
+| `authority` | `COption<Pubkey>` |
 | `auto_approve_new_accounts` | `bool` |
-| `auditor_elgamal_pubkey` | `Option<`[`ElGamalPubkey`](https://wiki.solanagraph.com/Basic_structures/ElGamal_Pubkey.md)`>` |
+| `auditor_elgamal_pubkey` | `Option<ElGamalPubkey>` |
 
 ### UpdateMint
 
@@ -59,12 +59,12 @@ The `UpdateMint` instruction modifies the confidential transfer configuration of
 
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `mint` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `authority` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `multisig_signers` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `token_program_id` | `Pubkey` |
+| `mint` | `Pubkey` |
+| `authority` | `Pubkey` |
+| `multisig_signers` | `[Pubkey]` |
 | `auto_approve_new_accounts` | `bool` |
-| `auditor_elgamal_pubkey` | `Option<`[`ElGamalPubkey`](https://wiki.solanagraph.com/Basic_structures/ElGamal_Pubkey.md)`>` |
+| `auditor_elgamal_pubkey` | `Option<ElGamalPubkey>` |
 
 ### ConfigureAccount
 
@@ -74,14 +74,14 @@ The ConfigureAccount instruction enables confidential transfers for a specific t
 
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `token_account` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `mint` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `decryptable_zero_balance` | [`DecryptableBalance`](https://wiki.solanagraph.com/Native_programs/SPL_Token_2022/extensions/confidential_transfer_account.md#decryptablebalance)  |
+| `token_program_id` | `Pubkey` |
+| `token_account` | `Pubkey` |
+| `mint` | `Pubkey` |
+| `decryptable_zero_balance` | `DecryptableBalance`  |
 | `maximum_pending_balance_credit_counter` | `u64` – A limit to how many pending balance updates can be applied |
-| `authority` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `multisig_signers` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
-| `proof_data_location` | [`PubkeyValidityProofData`](https://wiki.solanagraph.com/Basic_structures/PubkeyValidityProofData.md)  |
+| `authority` | `Pubkey` |
+| `multisig_signers` | `[Pubkey]` |
+| `proof_data_location` | `PubkeyValidityProofData`  |
 
 ### ApproveAccount
 
@@ -91,11 +91,11 @@ The ApproveAccount instruction authorizes a previously configured token account 
 
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `account_to_approve` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `mint` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `authority` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `multisig_signers` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `token_program_id` | `Pubkey` |
+| `account_to_approve` | `Pubkey` |
+| `mint` | `Pubkey` |
+| `authority` | `Pubkey` |
+| `multisig_signers` | `[Pubkey]` |
 
 ### EmptyAccount
 
@@ -105,11 +105,11 @@ The EmptyAccount instruction zeroes out the available confidential balance of a 
 
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `token_account` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `authority` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `multisig_signers` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
-| `proof_data_location` | [`ZeroCiphertextProofData`](https://wiki.solanagraph.com/Basic_structures/ZeroCiphertextProofData.md) |
+| `token_program_id` | `Pubkey` |
+| `token_account` | `Pubkey` |
+| `authority` | `Pubkey` |
+| `multisig_signers` | `[Pubkey]` |
+| `proof_data_location` | `ZeroCiphertextProofData` |
 
 ### Deposit
 
@@ -121,13 +121,13 @@ This allows a user to convert regular tokens into confidential tokens.
 
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `token_account` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `mint` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
+| `token_program_id` | `Pubkey` |
+| `token_account` | `Pubkey` |
+| `mint` | `Pubkey` |
 | `amount` | `u64` |
 | `decimals` | `u8` |
-| `authority` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `multisig_signers` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `authority` | `Pubkey` |
+| `multisig_signers` | `[Pubkey]` |
 
 
 ### Withdraw
@@ -138,15 +138,15 @@ The Withdraw instruction allows a user to redeem confidential tokens from their 
 
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `token_account` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `mint` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
+| `token_program_id` | `Pubkey` |
+| `token_account` | `Pubkey` |
+| `mint` | `Pubkey` |
 | `amount` | `u64` |
 | `decimals` | `u8` |
-| `new_decryptable_available_balance` | [`DecryptableBalance`](https://wiki.solanagraph.com/Native_programs/SPL_Token_2022/extensions/confidential_transfer_account.md#decryptablebalance) |
-| `authority` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `multisig_signers` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
-| `equality_proof_data_location` | [`CiphertextCommitmentEqualityProofData`](https://wiki.solanagraph.com/Basic_structures/CiphertextCommitmentEqualityProofData.md) |
+| `new_decryptable_available_balance` | `DecryptableBalance` |
+| `authority` | `Pubkey` |
+| `multisig_signers` | `[Pubkey]` |
+| `equality_proof_data_location` | `CiphertextCommitmentEqualityProofData` |
 | `range_proof_data_location` | `BatchedRangeProofU64Data` — Proof that the withdrawal amount fits within allowed bounds (e.g. is non-negative) |
 
 ### Transfer
@@ -157,16 +157,16 @@ The transfer instruction enables a confidential transfer of tokens between two S
 
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `source_token_account` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `mint` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `destination_token_account` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `new_source_decryptable_available_balance` | [`DecryptableBalance`](https://wiki.solanagraph.com/Native_programs/SPL_Token_2022/extensions/confidential_transfer_account.md#decryptablebalance) |
-| `transfer_amount_auditor_ciphertext_lo` | [`ElGamalCiphertext`](https://wiki.solanagraph.com/Basic_structures/ElGamal_Ciphertext.md) |
-| `transfer_amount_auditor_ciphertext_hi` | [`ElGamalCiphertext`](https://wiki.solanagraph.com/Basic_structures/ElGamal_Ciphertext.md) |
-| `authority` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `multisig_signers` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
-| `equality_proof_data_location` | [`CiphertextCommitmentEqualityProofData`](https://wiki.solanagraph.com/Basic_structures/CiphertextCommitmentEqualityProofData.md) |
+| `token_program_id` | `Pubkey` |
+| `source_token_account` | `Pubkey` |
+| `mint` | `Pubkey` |
+| `destination_token_account` | `Pubkey` |
+| `new_source_decryptable_available_balance` | `DecryptableBalance` |
+| `transfer_amount_auditor_ciphertext_lo` | `ElGamalCiphertext` |
+| `transfer_amount_auditor_ciphertext_hi` | `ElGamalCiphertext` |
+| `authority` | `Pubkey` |
+| `multisig_signers` | `[Pubkey]` |
+| `equality_proof_data_location` | `CiphertextCommitmentEqualityProofData` |
 | `ciphertext_validity_proof_data_location` | `BatchedGroupedCiphertext3HandlesValidityProofData` — Proves ciphertext structure is valid |
 | `range_proof_data_location` | `BatchedRangeProofU128Data` — Ensures transferred amount is in a valid range |
 
@@ -179,12 +179,12 @@ The `ApplyPendingBalance` instruction finalizes any pending confidential deposit
 
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `token_account` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
+| `token_program_id` | `Pubkey` |
+| `token_account` | `Pubkey` |
 | `pending_balance_instructions` | `u64` — The number of pending deposit/transfer instructions being applied |
-| `new_decryptable_available_balance` | [`DecryptableBalance`](https://wiki.solanagraph.com/Native_programs/SPL_Token_2022/extensions/confidential_transfer_account.md#decryptablebalance) |
-| `authority` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `multisig_signers` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `new_decryptable_available_balance` | `DecryptableBalance` |
+| `authority` | `Pubkey` |
+| `multisig_signers` | `[Pubkey]` |
 
 ### EnableConfidentialCredits
 
@@ -194,10 +194,10 @@ The `EnableConfidentialCredits` instruction enables a token account to receive c
 
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `token_account` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `authority` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `multisig_signers` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `token_program_id` | `Pubkey` |
+| `token_account` | `Pubkey` |
+| `authority` | `Pubkey` |
+| `multisig_signers` | `[Pubkey]` |
 
 ### DisableConfidentialCredits
 
@@ -207,10 +207,10 @@ The `DisableConfidentialCredits` instruction disables a token account from recei
 
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `token_account` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `authority` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `multisig_signers` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `token_program_id` | `Pubkey` |
+| `token_account` | `Pubkey` |
+| `authority` | `Pubkey` |
+| `multisig_signers` | `[Pubkey]` |
 
 ### EnableNonConfidentialCredits
 
@@ -220,10 +220,10 @@ Enables a token account, configured with the Confidential Transfer extension, to
 
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `token_account` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `authority` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `multisig_signers` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `token_program_id` | `Pubkey` |
+| `token_account` | `Pubkey` |
+| `authority` | `Pubkey` |
+| `multisig_signers` | `[Pubkey]` |
 
 ### DisableNonConfidentialCredits
 
@@ -233,10 +233,10 @@ Disables non-confidential (transparent) transfers to a confidential token accoun
 
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `token_account` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `authority` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `multisig_signers` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `token_program_id` | `Pubkey` |
+| `token_account` | `Pubkey` |
+| `authority` | `Pubkey` |
+| `multisig_signers` | `[Pubkey]` |
 
 ### TransferWithFee
 
@@ -246,16 +246,16 @@ Performs a confidential token transfer between two accounts while applying a con
 
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `source_token_account` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `mint` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `destination_token_account` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `new_source_decryptable_available_balance` | [`DecryptableBalance`](https://wiki.solanagraph.com/Native_programs/SPL_Token_2022/extensions/confidential_transfer_account.md#decryptablebalance) |
-| `transfer_amount_auditor_ciphertext_lo` | [`ElGamalCiphertext`](https://wiki.solanagraph.com/Basic_structures/ElGamal_Ciphertext.md) |
-| `transfer_amount_auditor_ciphertext_hi` | [`ElGamalCiphertext`](https://wiki.solanagraph.com/Basic_structures/ElGamal_Ciphertext.md) |
-| `authority` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `multisig_signers` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
-| `equality_proof_data_location` | [`CiphertextCommitmentEqualityProofData`](https://wiki.solanagraph.com/Basic_structures/CiphertextCommitmentEqualityProofData.md) |
+| `token_program_id` | `Pubkey` |
+| `source_token_account` | `Pubkey` |
+| `mint` | `Pubkey` |
+| `destination_token_account` | `Pubkey` |
+| `new_source_decryptable_available_balance` | `DecryptableBalance` |
+| `transfer_amount_auditor_ciphertext_lo` | `ElGamalCiphertext` |
+| `transfer_amount_auditor_ciphertext_hi` | `ElGamalCiphertext` |
+| `authority` | `Pubkey` |
+| `multisig_signers` | `[Pubkey]` |
+| `equality_proof_data_location` | `CiphertextCommitmentEqualityProofData` |
 | `transfer_amount_ciphertext_validity_proof_data_location` | `BatchedGroupedCiphertext3HandlesValidityProofData` |
 | `fee_sigma_proof_data_location` | `PercentageWithCapProofData` |
 | `fee_ciphertext_validity_proof_data_location` | `BatchedGroupedCiphertext2HandlesValidityProofData` |
@@ -269,9 +269,9 @@ Initializes confidential transfer settings for a token account using a pre-valid
 
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `token_account` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `mint` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `elgamal_registry_account` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `payer` | `Option<`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`>` |
+| `token_program_id` | `Pubkey` |
+| `token_account` | `Pubkey` |
+| `mint` | `Pubkey` |
+| `elgamal_registry_account` | `Pubkey` |
+| `payer` | `COption<Pubkey>` |
 

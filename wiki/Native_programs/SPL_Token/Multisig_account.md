@@ -17,4 +17,4 @@ It allows a group of public keys to act collectively as an authority for token o
 | `m` | `u8` | Number of required signatures |
 | `n` | `u8` | Number of total valid signers |
 | `is_initialized` | `bool` | Indicates if the account is usable |
-| `signers` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`; 11]` | Array of signer public keys |
+| `signers` | `[Pubkey; 11]` | Array of signer public keys |

@@ -10,7 +10,7 @@ The `PubkeyValidityProofData` structure is used in zero-knowledge (ZK) systems t
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| `context` | [`PubkeyValidityProofContext`](#pubkeyvalidityproofcontext) | Contains the ElGamal public key being validated. |
+| `context` | `PubkeyValidityProofContext` | Contains the ElGamal public key being validated. |
 | `proof` | `PubkeyValidityProof` | A cryptographic proof that the public key is well-formed. |
 
 
@@ -18,7 +18,7 @@ The `PubkeyValidityProofData` structure is used in zero-knowledge (ZK) systems t
 
 This struct holds the ElGamal public key that is being validated.
 
-`PubkeyValidityProofContext = `[`ElGamalPubkey`](https://wiki.solanagraph.com/Basic_structures/ElGamal_Pubkey.md)
+`PubkeyValidityProofContext = ElGamalPubkey`
 
 ## PubkeyValidityProof
 

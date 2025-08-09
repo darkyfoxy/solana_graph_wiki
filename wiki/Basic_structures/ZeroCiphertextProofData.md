@@ -10,8 +10,8 @@ The `ZeroCiphertextProofData` structure is used to prove in zero knowledge that 
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| `context` | [`ZeroCiphertextProofContext`](#zerociphertextproofcontext) | Contains the ElGamal ciphertext that is claimed to be zero. |
-| `proof` | [`ZeroCiphertextProof`](#zerociphertextproof) | A zero-knowledge proof that the ciphertext indeed encrypts the value zero. |
+| `context` | `ZeroCiphertextProofContext` | Contains the ElGamal ciphertext that is claimed to be zero. |
+| `proof` | `ZeroCiphertextProof` | A zero-knowledge proof that the ciphertext indeed encrypts the value zero. |
 
 ## ZeroCiphertextProofContext
 
@@ -23,8 +23,8 @@ The ZeroCiphertextProofContext structure provides the contextual data required t
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| `pubkey` | [`ElGamalPubkey`](https://wiki.solanagraph.com/Basic_structures/ElGamal_Pubkey.md) | The ElGamal public key used to encrypt the ciphertext. |
-| `ciphertext` | [`ElGamalCiphertext`](https://wiki.solanagraph.com/Basic_structures/ElGamal_Ciphertext.md) | The ElGamal ciphertext being proved to encrypt the value zero. |
+| `pubkey` | `ElGamalPubkey` | The ElGamal public key used to encrypt the ciphertext. |
+| `ciphertext` | `ElGamalCiphertext` | The ElGamal ciphertext being proved to encrypt the value zero. |
 
 
 ## ZeroCiphertextProof

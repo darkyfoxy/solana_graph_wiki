@@ -10,11 +10,11 @@ The TransferFeeConfig extension enables SPL Token mints to impose transfer fees 
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| `transfer_fee_config_authority` | [`NonZeroPubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) | Optional authority that may update the fee configuration. |
-| `withdraw_withheld_authority` | [`NonZeroPubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) | Optional authority allowed to withdraw withheld fees from mint. |
+| `transfer_fee_config_authority` | `NonZeroPubkey` | Optional authority that may update the fee configuration. |
+| `withdraw_withheld_authority` | `NonZeroPubkey` | Optional authority allowed to withdraw withheld fees from mint. |
 | `withheld_amount` | `u64` | Accumulated withheld fees collected from transfers. |
-| `older_transfer_fee` | [`TransferFee`](#transferfee-structure) | The previous fee configuration, used when the current epoch is before `newer_transfer_fee.epoch`. |
-| `newer_transfer_fee` | [`TransferFee`](#transferfee-structure) | The current or upcoming fee configuration, effective when the epoch is reached. |
+| `older_transfer_fee` | `TransferFee` | The previous fee configuration, used when the current epoch is before `newer_transfer_fee.epoch`. |
+| `newer_transfer_fee` | `TransferFee` | The current or upcoming fee configuration, effective when the epoch is reached. |
 
 
 ## TransferFee Structure
@@ -52,10 +52,10 @@ This extension enables the mint to collect a percentage-based fee on token trans
 
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `mint` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `transfer_fee_config_authority` | `Option<`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`>` |
-| `withdraw_withheld_authority` | `Option<`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`>` |
+| `token_program_id` | `Pubkey` |
+| `mint` | `Pubkey` |
+| `transfer_fee_config_authority` | `Option<Pubkey>` |
+| `withdraw_withheld_authority` | `Option<Pubkey>` |
 | `transfer_fee_basis_points` | `u16` |
 | `maximum_fee` | `u64` |
 
@@ -68,12 +68,12 @@ The TransferCheckedWithFee instruction transfers tokens from one account to anot
 
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `source` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `mint` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `destination` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `authority` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signers` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `token_program_id` | `Pubkey` |
+| `source` | `Pubkey` |
+| `mint` | `Pubkey` |
+| `destination` | `Pubkey` |
+| `authority` | `Pubkey` |
+| `signers` | `[Pubkey]` |
 | `amount` | `u64` |
 | `decimals` | `u8` |
 | `fee` | `u64` |
@@ -86,11 +86,11 @@ The WithdrawWithheldTokensFromMint instruction allows an authorized entity to wi
 
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `mint` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `destination` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `authority` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signers` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `token_program_id` | `Pubkey` |
+| `mint` | `Pubkey` |
+| `destination` | `Pubkey` |
+| `authority` | `Pubkey` |
+| `signers` | `[Pubkey]` |
 
 ### WithdrawWithheldTokensFromAccounts
 
@@ -100,12 +100,12 @@ The WithdrawWithheldTokensFromAccounts instruction allows the mint’s authorize
 
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `mint` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `destination` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `authority` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signers` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
-| `sources` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `token_program_id` | `Pubkey` |
+| `mint` | `Pubkey` |
+| `destination` | `Pubkey` |
+| `authority` | `Pubkey` |
+| `signers` | `[Pubkey]` |
+| `sources` | `[Pubkey]` |
 
 ### HarvestWithheldTokensToMint
 
@@ -115,9 +115,9 @@ The HarvestWithheldTokensToMint instruction allows anyone to collect withheld tr
 
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `mint` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `sources` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `token_program_id` | `Pubkey` |
+| `mint` | `Pubkey` |
+| `sources` | `[Pubkey]` |
 
 ### SetTransferFee
 
@@ -126,9 +126,9 @@ The SetTransferFee instruction updates the transfer fee configuration on a mint.
 
 | Name | Type |
 | ---- | ---- |
-| `token_program_id` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `mint` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `authority` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `signers` | `[`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`]` |
+| `token_program_id` | `Pubkey` |
+| `mint` | `Pubkey` |
+| `authority` | `Pubkey` |
+| `signers` | `[Pubkey]` |
 | `transfer_fee_basis_points` | `u16` |
 | `maximum_fee` | `u64` |
