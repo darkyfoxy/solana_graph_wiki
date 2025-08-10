@@ -438,9 +438,9 @@ This must be done **before** the mint is initialized and only works if the mint 
 
 | Name | Type |
 | ---- | ---- |
-| `token_program_id`| [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `mint_pubkey` | [`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md) |
-| `close_authority` | `Option<`[`Pubkey`](https://wiki.solanagraph.com/Basic_structures/Public_key.md)`>` |
+| `token_program_id`| `Pubkey` |
+| `mint_pubkey` | `Pubkey` |
+| `close_authority` | `Option<Pubkey>` |
 
 
 ### TransferFeeExtension

@@ -1,8 +1,8 @@
 - Solana_account.md
 - Pubkey.md
 - COption.md
-- ElGamal_Pubkey.md
-- ElGamal_Ciphertext.md
+- ElGamalPubkey.md
+- ElGamalCiphertext.md
 - PubkeyValidityProofData.md
 - ZeroCiphertextProofData.md
 - CiphertextCommitmentEqualityProofData.md
